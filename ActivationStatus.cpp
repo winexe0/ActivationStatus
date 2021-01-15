@@ -4,7 +4,7 @@
 using namespace std;
 int main() {
    string confirm;
-   system("title ActivationStatus v1.0.5 Console");
+   system("title ActivationStatus v1.1.0 Console");
    system("echo Detected Processor is %PROCESSOR_ARCHITECTURE%");
    std::cout << "Do you accept the license terms? It can be found at https://github.com/winexe0/ActivationStatus/blob/master/LICENSE ";
   cin >> confirm;
