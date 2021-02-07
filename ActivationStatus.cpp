@@ -1,25 +1,25 @@
-#include<iostream>
+#include <iostream>
 #include <windows.h>
 #include <string>
 using namespace std;
 int main() {
    string confirm;
-   system("title ActivationStatus v1.1.1 Console");
+   system("title ActivationStatus v1.2.0 Console");
    system("echo Detected Processor is %PROCESSOR_ARCHITECTURE%");
-   std::cout << "Do you accept the license terms? It can be found at https://github.com/winexe0/ActivationStatus/blob/master/LICENSE ";
-  cin >> confirm;
-while (confirm == "no") {
-    return 0;
-}
-while (confirm == "No") {
-    return 0;
-}
-while (confirm == "nO") {
-    return 0;
-}
-while (confirm == "NO") {
-    return 0;
-}
-   MessageBox(0,"Please Wait", "Please Wait", MB_OK);
+   int license = MessageBox(
+        NULL,
+        "Do you accept the license terms?\nIt can be found at https://github.com/winexe0/ActivationStatus/blob/master/LICENSE ",
+        "License Agreement",
+        	MB_ICONQUESTION | MB_YESNO | MB_DEFBUTTON1
+    );
+
+    switch (license)
+    {
+    case IDNO:
+        cout << "Exiting due to refusal of license agreement." << endl;
+        exit(7);
+        break;
+    }
+   MessageBox(0,"Please Wait", "Please Wait", MB_ICONINFORMATION | MB_OK);
    system("slmgr /xpr");
 }
