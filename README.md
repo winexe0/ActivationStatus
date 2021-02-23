@@ -8,7 +8,6 @@ Then you can cd to ActivationStatus source directory and execute
    ```
    which should give you a usable x86_64 binary.
    If you want to build for x86_32 instead, execute
-   
     ```
     make -f Makefile.mingw x86=y
     ```
