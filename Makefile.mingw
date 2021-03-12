@@ -23,25 +23,25 @@ TOOL_PREFIX     := x86_64-w64-mingw32-
 endif
 CPP             := ${TOOL_PREFIX}g++
 CC              := ${TOOL_PREFIX}gcc
-ARCH    :== Intel32bit
+ARCH    := Intel32bit
 WINDRES		:= ${TOOL_PREFIX}windres
 ifeq ($(ARM64), y)
 CPP		:= aarch64-w64-mingw32-g++
 CC		:= aarch64-w64-mingw32-gcc
 WINDRES		:= aarch64-w64-mingw32-windres
-ARCH    :== aarch64
+ARCH    := aarch64
 endif
 ifeq ($(ARM), y)
 CPP		:= armv7-w64-mingw32-g++
 CC		:= armv7-w64-mingw32-gcc
 WINDRES		:= armv7-w64-mingw32-windres
-ARCH    :== armv7
+ARCH    := armv7
 endif
 # Compile :)
 #icon.res: icon.rc
 #	$(WINDRES) icon.rc -O coff -o icon.res
 ActivationStatus.exe: ActivationStatus.cpp icon.rc
 	$(WINDRES) icon.rc -O coff -o icon.res
-	$(CPP) -o $(PROG).exe ActivationStatus.cpp icon.res -static
+	$(CPP) -o $(PROG)$(ARCH).exe ActivationStatus.cpp icon.res -static
 
 
