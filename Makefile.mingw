@@ -40,8 +40,8 @@ endif
 # Compile :)
 #icon.res: icon.rc
 #	$(WINDRES) icon.rc -O coff -o icon.res
-ActivationStatus.exe: ActivationStatus.cpp icon.rc
+ActivationStatus.exe: ActivationStatus.cpp icon.rc wait.h wait.cpp
 	$(WINDRES) icon.rc -O coff -o icon.res
-	$(CPP) -o $(PROG)$(ARCH).exe ActivationStatus.cpp icon.res -static
+	$(CPP) -o $(PROG)$(ARCH).exe ActivationStatus.cpp wait.cpp icon.res -static
 
 
