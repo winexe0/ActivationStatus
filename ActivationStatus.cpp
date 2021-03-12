@@ -2,10 +2,11 @@
 #include <windows.h>
 #include <string>
 #include <VersionHelpers.h>
+#inlucde "wait.h"
 using namespace std;
 int main() {
    string confirm;
-   system("title ActivationStatus v1.2.1 Console");
+   system("title ActivationStatus v1.3.0 Console");
    system("echo Detected Processor is %PROCESSOR_ARCHITECTURE%");
     if (!IsWindowsVistaOrGreater())
     {
@@ -27,6 +28,6 @@ int main() {
         exit(7);
         break;
     }
-   MessageBox(0,"Please Wait", "Please Wait", MB_ICONINFORMATION | MB_OK);
+   pleasewait();
    system("slmgr /xpr");
 }
