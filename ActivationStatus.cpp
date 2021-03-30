@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <string>
 #include <VersionHelpers.h>
-#inlucde "wait.h"
+#inlcude "wait.h"
 using namespace std;
 int main() {
    string confirm;
