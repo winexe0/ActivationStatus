@@ -1,3 +1,4 @@
+#define VERSION "ActivationStatus v1.3.0\n"
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -5,8 +6,23 @@
 #include "wait.h"
 using namespace std;
 int main() {
+   for (int i = 1; i < argc; ++i) {
+	string arg = argv[i];
+	if (arg == "--help" || arg == "-h") {
+	cout << VERSION << endl;
+	cout << "\
+Usage: ActivationStatus [-h] [--help] [--version]\n\
+Options: --help or -h (Prints this exact messaage) --version (Prints out the version of this ActivationStatus binary)" << endl;
+    exit(0);
+		}
+    if (arg == "--version") {
+	cout << VERSION << endl;
+	cout << "Copyright (c) 2020-2021 winexe0 aryan.chandna@icloud.com" << endl;
+	exit(0);
+	}
+}
    string confirm;
-   system("title ActivationStatus v1.3.0 Console");
+   system("title ActivationStatus v1.3.2Console");
    system("echo Detected Processor is %PROCESSOR_ARCHITECTURE%");
     if (!IsWindowsVistaOrGreater())
     {
