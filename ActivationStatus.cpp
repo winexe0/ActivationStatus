@@ -1,11 +1,11 @@
-#define VERSION "ActivationStatus v1.3.0\n"
+#define VERSION "ActivationStatus v1.3.3\n"
 #include <iostream>
 #include <windows.h>
 #include <string>
 #include <VersionHelpers.h>
 #include "wait.h"
 using namespace std;
-int main() {
+int main(int argc, char *argv[]) {
    for (int i = 1; i < argc; ++i) {
 	string arg = argv[i];
 	if (arg == "--help" || arg == "-h") {
@@ -22,7 +22,7 @@ Options: --help or -h (Prints this exact messaage) --version (Prints out the ver
 	}
 }
    string confirm;
-   system("title ActivationStatus v1.3.2Console");
+   system("title ActivationStatus v1.3.3 Console");
    system("echo Detected Processor is %PROCESSOR_ARCHITECTURE%");
     if (!IsWindowsVistaOrGreater())
     {
