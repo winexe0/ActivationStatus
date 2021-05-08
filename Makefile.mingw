@@ -23,7 +23,7 @@ TOOL_PREFIX     := x86_64-w64-mingw32-
 endif
 CPP             := ${TOOL_PREFIX}g++
 CC              := ${TOOL_PREFIX}gcc
-ARCH    :== Intel64bit
+ARCH    := Intel64bit
 WINDRES		:= ${TOOL_PREFIX}windres
 ifeq ($(ARM64), y)
 CPP		:= aarch64-w64-mingw32-g++
