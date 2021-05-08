@@ -1,4 +1,4 @@
-#define VERSION "ActivationStatus v1.3.3\n"
+#define VERSION "ActivationStatus v1.3.4\n"
 #include <iostream>
 #include <windows.h>
 #include <string>
@@ -20,9 +20,17 @@ Options: --help or -h (Prints this exact messaage) --version (Prints out the ver
 	cout << "Copyright (c) 2020-2021 winexe0 aryan.chandna@icloud.com" << endl;
 	exit(0);
 	}
+    else {
+	cout << VERSION << endl;
+	cout << "Invalid argument" << endl;
+	cout << "\
+Usage: ActivationStatus [-h] [--help] [--version]\n\
+Options: --help or -h (Prints this exact messaage) --version (Prints out the version of this ActivationStatus binary)" << endl;
+    exit(0);
+	}
 }
    string confirm;
-   system("title ActivationStatus v1.3.3 Console");
+   system("title ActivationStatus v1.3.4 Console");
    system("echo Detected Processor is %PROCESSOR_ARCHITECTURE%");
     if (!IsWindowsVistaOrGreater())
     {
